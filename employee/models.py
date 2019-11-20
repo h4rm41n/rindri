@@ -1,5 +1,13 @@
 from django.db import models
 
+
+class Kota(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Employee(models.Model):
 
     nip = models.CharField(max_length=11,
@@ -26,6 +34,8 @@ class Employee(models.Model):
     place_of_birth = models.CharField(max_length=255, blank=False, null=True)
     address = models.TextField(max_length=50, blank=True,
         null=True, help_text="Masukkan Alamat Pegawai")    
+
+    kota = models.ForeignKey(Kota, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.name

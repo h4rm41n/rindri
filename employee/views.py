@@ -28,6 +28,7 @@ class EmployeeCreateView(FormMixin, generic.CreateView):
         context["label"] = "Create"
         return context
 
+
 class EmployeeListView(generic.ListView):
     queryset = models.Employee.objects.all().order_by('-name')
 
