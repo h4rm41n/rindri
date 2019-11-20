@@ -19,8 +19,7 @@ class Index(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context["label"] = "Aplikasi Kece"
         return context
-    
-
+ 
 
 class EmployeeCreateView(FormMixin, generic.CreateView):
 
@@ -28,6 +27,7 @@ class EmployeeCreateView(FormMixin, generic.CreateView):
         context = super().get_context_data(**kwargs)
         context["label"] = "Create"
         return context
+
 
 class EmployeeListView(generic.ListView):
     queryset = models.Employee.objects.all().order_by('-name')

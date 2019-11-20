@@ -12,6 +12,7 @@
             <th>Jabatan</th>
             <th>Gender</th>
             <th>Tempat/Tanggal Lahir</th>
+            <th>Kota</th>
             <th>Alamat</th>
             <th>Proses</th>
         </tr>
@@ -30,6 +31,7 @@
                     {% endif %}
                     ,{{obj.date_of_birth}}
                 </td>
+                <td>{{ obj.kota.name }}</td>
                 <td>
                     {% if obj.address %}
                         {{obj.address}}
