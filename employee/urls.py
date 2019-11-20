@@ -4,7 +4,8 @@ from employee import views
 app_name = "employee"
 
 urlpatterns = [
-    path('', views.EmployeeList.as_view(), name="list"),
+    path('', views.EmployeeListView.as_view(), name="list"),
     path('form/', views.EmployeeCreateView.as_view(), name="form"),
-    path('edit/<str:nip>',views.EmployeeEdit.as_view(),name="edit"),
+    path('edit/<str:nip>', views.EmployeeUpdate.as_view(), name="update"),
+    path('delete/<str:nip>', views.EmployeeDelete.as_view(), name='delete'),
 ]
