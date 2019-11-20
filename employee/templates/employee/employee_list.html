@@ -11,7 +11,7 @@
             <th>Nama</th>
             <th>Jabatan</th>
             <th>Gender</th>
-            <th>Tanggal Lahir</th>
+            <th>Tempat/Tanggal Lahir</th>
             <th>Alamat</th>
             <th>Proses</th>
         </tr>
@@ -22,16 +22,27 @@
                 <td>{{obj.name}}</td>
                 <td>{{obj.job_Position}}</td>
                 <td>{{obj.gender}}</td>
-                <td>{{obj.date_of_birth}}</td>
-                <td>{{obj.addres}}</td>
                 <td>
-                    Edit | Hapus
+                    {% if obj.place_of_birth %}
+                        {{obj.place_of_birth}}
+                    {% else %}
+                        -
+                    {% endif %}
+                    ,{{obj.date_of_birth}}
+                </td>
+                <td>
+                    {% if obj.address %}
+                        {{obj.address}}
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{% url 'employee-url:update' nip=obj.nip %}">Edit</a>
+                    | 
+                    <a onclick="return confirm('Delete data?')" href="{% url 'employee-url:delete' nip=obj.nip %}">Delete</a>
                 </td>
             </tr>
         {% endfor %}
     </table>
-
-    <!-- {% for obj in object_list %}
-        <p>{{obj.name}}</p>
-    {% endfor %} -->
 {% endblock container %}

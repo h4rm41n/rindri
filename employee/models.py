@@ -23,7 +23,7 @@ class Employee(models.Model):
         blank=False, null=True, help_text="Pilih Jenis Kelamin")
 
     date_of_birth = models.DateField(auto_now=False, null = True, default = '2019-11-06')
-
+    place_of_birth = models.CharField(max_length=255, blank=False, null=True)
     address = models.TextField(max_length=50, blank=True,
         null=True, help_text="Masukkan Alamat Pegawai")    
 
