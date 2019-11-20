@@ -40,7 +40,8 @@ ROOT_URLCONF = 'payroll.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")], 
+        # /Users/harmain/django-webapp/rindri/templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
