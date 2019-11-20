@@ -6,4 +6,5 @@ app_name = "employee"
 urlpatterns = [
     path('', views.EmployeeList.as_view(), name="list"),
     path('form/', views.EmployeeCreateView.as_view(), name="form"),
+    path('edit/<str:nip>',views.EmployeeEdit.as_view(),name="edit"),
 ]

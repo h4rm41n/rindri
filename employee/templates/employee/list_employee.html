@@ -25,7 +25,7 @@
                 <td>{{obj.date_of_birth}}</td>
                 <td>{{obj.addres}}</td>
                 <td>
-                    Edit | Hapus
+                    <a href ="{% url 'employee-url:edit' nip=obj.nip %}">Edit</a> | Hapus
                 </td>
             </tr>
         {% endfor %}
