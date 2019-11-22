@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block container %}
+<form action="{% url 'payroll-url:form' nip=employee.nip %}" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Nama</label>
+            <input class="form-control disabled" value="{{ employee.name }}" disabled />
+          </div>
+          <div class="form-group col-md-4">
+            <label>NIP</label>
+            <input class="form-control disabled" value="{{ employee.nip }}" disabled />
+          </div>
+          <div class="form-group col-md-4">
+                <label>Job Position</label>
+                <input class="form-control disabled" value="{{ employee.job_position.name }}" disabled />
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Alamat</label>
+          <input class="form-control disabled" value="{{ employee.address }}" disabled />
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputCity">Allowance</label>
+            <input name="allowance" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Overtime</label>
+            <input name="overtime" type="text" class="form-control"/>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Add Earnings</label>
+            <input name="add_earnings" type="text" class="form-control" />
+          </div>
+          <div class="form-group col-md-3">
+            <label>THP</label>
+            <input name="thp" type="text" class="form-control" />
+        </div>
+        </div>
+        <button type="submit" class="btn btn-dark btn-block">Submit Pay</button>
+      </form>
+{% endblock container %}

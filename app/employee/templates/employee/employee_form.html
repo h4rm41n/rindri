@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block container %}  
+    <h5>Form {{ label }} data</h5>
+    <table class="table">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <tr>
+                <td colspan="3">
+                    <input class="btn btn-success btn-block" type="submit" value="SIMPAN">
+                </td>
+            </tr>
+        </form>
+    </table>
+{% endblock container %}
