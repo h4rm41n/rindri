@@ -5,5 +5,5 @@ app_name = "payroll"
 
 urlpatterns = [
     # path('', views.PayrollView.as_view(), name='list'),
-    path('form/<str:nip>', views.PayrollView.as_view(), name="form"),
+    path('form/<str:pk>', views.PayrollView.as_view(), name="form"),
 ]

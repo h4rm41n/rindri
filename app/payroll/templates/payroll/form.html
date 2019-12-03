@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block container %}
-    <form action="{% url 'payroll-url:form' nip=employee.nip %}" method="post">
+    <form action="{% url 'payroll-url:form' pk=employee.pk %}" method="post">
         <div class="form-row">
           <div class="form-group col-md-4">
             <label>Nama</label>

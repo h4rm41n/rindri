@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block container %}
+    <form action="{% url 'employee-url:create-job' %}" method="POST">
+        {% csrf_token %}
+        Nama<br />
+        <input class="form-control" type="text" name="name"><br />
+
+        Salary<br />
+        <input class="form-control" type="number" name="salary"><br />
+
+        Keterangan<br />
+        <textarea class="form-control" name="detail" cols="30" rows="10"></textarea><br />
+
+        <input class="btn btn-danger btn-block" type="submit" value="SIMPAN">
+    </form>
+{% endblock container %}

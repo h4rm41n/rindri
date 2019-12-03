@@ -7,8 +7,8 @@ from app.employee.models import Employee
 class PayrollView(generic.View):
     template_name = "payroll/form.html"
 
-    def get(self, request, nip):
-        employee = get_object_or_404(Employee, nip=nip)
+    def get(self, request, pk):
+        employee = get_object_or_404(Employee, pk=pk)
         form = PayRollForm()
         data = {
             "form": form,
