@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block container %}
+    <h6>List Job Position</h6>
+    <a class="btn btn-dark btn-sm" href="{% url 'employee-url:create-job' %}">Tambah Data</a><br /><br />
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>No.</th>
+            <th>Nama</th>
+            <th>Salary</th>
+            <th>Proses</th>
+        </tr>
+
+        {% for data in job %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.salary }}</td>
+
+                <td>
+                    <a href="{% url 'employee-url:edit-job' pk=data.pk %}">Edit</a> |
+                    <a href="{% url 'employee-url:delete-job' pk=data.pk %}">Delete</a> |
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock container %}

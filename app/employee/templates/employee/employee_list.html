@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block container %}
-    <a class="btn btn-primary btn-sm" href="/employee/form/">Tambah</a><br /><br />
+    <a class="btn btn-primary btn-sm" href="{% url 'employee-url:create' %}">Tambah</a><br /><br />
     <h5><u>List Employee</u></h5>
 
     <table class="table table-striped table-hover">
@@ -40,11 +40,11 @@
                     {% endif %}
                 </td>
                 <td>
-                    <a href="{% url 'employee-url:update' nip=obj.nip %}">Edit</a>
+                    <a href="{% url 'employee-url:update' pk=obj.pk %}">Edit</a>
                     | 
-                    <a onclick="return confirm('Delete data?')" href="{% url 'employee-url:delete' nip=obj.nip %}">Delete</a>
+                    <a href="{% url 'employee-url:delete' pk=obj.pk %}">Delete</a>
                     |
-                    <a onclick="return confirm('Pay?')" href="{% url 'payroll-url:form' nip=obj.nip %}">Pay</a>
+                    <a onclick="return confirm('Pay?')" href="{% url 'payroll-url:form' pk=obj.pk %}">Pay</a>
 
                 </td>
             </tr>

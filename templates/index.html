@@ -1,24 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Payroll</title>
 </head>
+
 <body>
-    <div class="container">
-        <h3>Aplikasi Payroll PT. Rindri</h3>
-        <a href="/">Home</a> | 
-        <a href="/employee/">Employee</a> |
-        <a href="/job/">Job Position</a> |
-        {# <a href="{% url 'payroll-url:form' %}">Payroll</a> #}
+    <div class="container-fluid">
 
-        <br /><br />
-        {% block container %}
+        <div class="row header">
+            <div class="col-md-12">
+                <h2>Aplikasi Payroll PT. Rindri</h>
+            </div>
+        </div>
 
-        {% endblock container %}
+        <div class="row tengah">
+            <div class="content col-md-9">
+                {% block container %}
+
+                {% endblock container %}
+            </div>
+            <div class="sidebar col-md-3">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action active" href="/">Home</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'employee-url:list' %}">Employee</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'employee-url:list-job' %}">Job
+                        Position</a>
+                </div>
+            </div>
+        </div>
+        <div class="row footer">
+            <div class="col-md-12">
+                <p>Copyright &copy; Rindri</p>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

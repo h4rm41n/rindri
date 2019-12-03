@@ -1,4 +1,5 @@
 .vscode
 env
-employee/migrations
+app/employee/migrations
+app/payroll/migrations
 .pyc
